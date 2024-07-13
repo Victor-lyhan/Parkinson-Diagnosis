@@ -4,6 +4,7 @@ import math
 import time
 from ultralytics import YOLO
 import cv2
+import csv
 from pydantic import BaseModel
 
 def resize_image(image, scale_factor):
@@ -39,11 +40,18 @@ class GetKeypoint(BaseModel):
 
 get_keypoint = GetKeypoint()
 
-source_path = 'data/Videos/PDFE01_1.mp4'  # or 0 for webcam
+source_path = 'Data/Videos/PDFE01_1.mp4'  # or 0 for webcam
 
 # Open video capture
 cap = cv2.VideoCapture(source_path)
 model = YOLO('yolov8n-pose.pt')
+
+# Initialize CSV file
+csv_file = 'Computer Vision/Results/results.csv'
+with open(csv_file, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    # Write the headers
+    writer.writerow(['timestamp', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
 
 # Previous frame angles, angular velocities, and linear accelerations
 prev_angle = None
@@ -61,11 +69,16 @@ while cap.isOpened():
 
     # Resize the image
     frame = resize_image(frame, scale_factor)
-    start_time = cap.get(cv2.CAP_PROP_POS_MSEC)/1000
+    frame_time = cap.get(cv2.CAP_PROP_POS_MSEC) / 1000
 
     # Run YOLOv8 inference on the frame
     results = model(frame, conf=0.7)
     index = 0
+
+    # Check if keypoints are detected -- issues with not identifying keypoints
+    if results[0].keypoints is None:
+        print("No Kepypoints detected in this frame. Skipping...")
+        continue
     result_keypoint = results[0].keypoints.xyn.cpu().numpy()
 
     if len(result_keypoint) > 1 and result_keypoint[0][get_keypoint.RIGHT_ANKLE][0] > result_keypoint[1][get_keypoint.RIGHT_ANKLE][0]:
@@ -85,7 +98,7 @@ while cap.isOpened():
     magnitude1 = math.sqrt(vector1[0]**2 + vector1[1]**2)
     magnitude2 = math.sqrt(vector2[0]**2 + vector2[1]**2)
 
-    # Checking magniutde dot product -- having issues with script stopping
+    # Checking magnitude dot product -- having issues with script stopping
     print(f"dot_product: {dot_product}, magnitude1: {magnitude1}, magnitude2: {magnitude2}")
 
     if magnitude1 == 0 or magnitude2 == 0:
@@ -118,6 +131,11 @@ while cap.isOpened():
     prev_angular_velocity = angular_velocity
     prev_linear_acceleration = linear_acceleration
     prev_time = current_time
+
+    # Write results to CSV
+    with open(csv_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([current_time, frame_time, index, right_ankle[0], right_ankle[1], right_knee[0], right_knee[1], right_hip[0], right_hip[1], magnitude1, magnitude2, angle_deg, angular_velocity, linear_acceleration])
 
     # Display the image with keypoints
     cv2.imshow('YOLOv8 Keypoints', results[0].plot())
