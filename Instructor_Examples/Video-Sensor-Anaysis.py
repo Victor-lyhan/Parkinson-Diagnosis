@@ -40,7 +40,7 @@ class GetKeypoint(BaseModel):
 
 get_keypoint = GetKeypoint()
 
-source_path = 'data/Videos/PDFE01_1.mp4'  # or 0 for webcam
+source_path = 'data/Videos/PDFE02_1.mp4'  # or 0 for webcam
 
 # Open video capture
 cap = cv2.VideoCapture(source_path)
