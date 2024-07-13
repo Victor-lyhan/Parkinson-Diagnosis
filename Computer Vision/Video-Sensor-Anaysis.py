@@ -40,14 +40,14 @@ class GetKeypoint(BaseModel):
 
 get_keypoint = GetKeypoint()
 
-source_path = 'Data/Videos/PDFE01_1.mp4'  # or 0 for webcam
+source_path = 'Data/Videos/PDFE02_1.mp4'  # or 0 for webcam TODO: change for new vid
 
 # Open video capture
 cap = cv2.VideoCapture(source_path)
 model = YOLO('yolov8n-pose.pt')
 
 # Initialize CSV file
-csv_file = 'Computer Vision/Results/results.csv'
+csv_file = 'Computer Vision/Results/p2v1_results.csv' #TODO: change for new vid
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.writer(file)
     # Write the headers
