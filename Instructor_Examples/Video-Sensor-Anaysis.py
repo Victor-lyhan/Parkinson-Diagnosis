@@ -84,7 +84,17 @@ while cap.isOpened():
     dot_product = vector1[0] * vector2[0] + vector1[1] * vector2[1]
     magnitude1 = math.sqrt(vector1[0]**2 + vector1[1]**2)
     magnitude2 = math.sqrt(vector2[0]**2 + vector2[1]**2)
-    angle_rad = math.acos(dot_product / (magnitude1 * magnitude2))
+
+    # Checking magniutde dot product -- having issues with script stopping
+    print(f"dot_product: {dot_product}, magnitude1: {magnitude1}, magnitude2: {magnitude2}")
+
+    if magnitude1 == 0 or magnitude2 == 0:
+        print("One of the magnitudes is zero, skipping frame")
+        continue
+
+    cos_angle = dot_product / (magnitude1 * magnitude2)
+    cos_angle = max(-1.0, min(1.0, cos_angle))
+    angle_rad = math.acos(cos_angle)
 
     # Convert the angle to degrees
     angle_deg = math.degrees(angle_rad)
