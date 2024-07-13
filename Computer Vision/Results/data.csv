@@ -1,0 +1,18 @@
+video - frame count
+p1v1 - 3258*
+p1v2 - 3676
+p2v1 - 3689
+p3v1 - 2364*
+p3v2 - 3636
+p3v3 - 181*
+p4v1 - 57*
+p5v1 - 803*
+p5v2 - 3611*
+p6v1 - 3616
+p6v2 - 3597
+
+* :
+Traceback (most recent call last):
+  File "/Users/hanliyang/Documents/GitHub/Parkinson-Prediagnosis/Computer Vision/Video-Sensor-Anaysis.py", line 88, in <module>
+    right_ankle = result_keypoint[index][get_keypoint.RIGHT_ANKLE]
+IndexError: index 16 is out of bounds for axis 0 with size 0
