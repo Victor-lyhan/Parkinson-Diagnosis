@@ -4,3 +4,4 @@
 3. Angular Acceleration added in video analysis
 4. code to run analysis on all videos
 5. go through the vid analysis code
+6. Extract out the fog vs non fog data
