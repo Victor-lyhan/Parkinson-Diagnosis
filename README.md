@@ -13,3 +13,7 @@
 2. Complete Analysis and Machine Learning Models for Video Data
 
 3. While 1 & 2, compare different model types and record accuracy
+
+# Commands
+* To add current venv packages onto requirements.txt ```pip freeze > requirements.txt``` make sure you are in the correct directory
+* To install all packages inside the requirements.txt file ```pip install -r requirementx.txt```
