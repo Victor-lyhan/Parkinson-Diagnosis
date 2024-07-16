@@ -51,7 +51,7 @@ csv_file = 'Instructor_Examples/Results/results.csv'
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.writer(file)
     # Write the headers
-    writer.writerow(['timestamp', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
+    writer.writerow(['currenttime', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
 
 # Previous frame angles, angular velocities, and linear accelerations
 prev_angle = None
