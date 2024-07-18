@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 
-vid = "p1v1" #TODO: Modify for diff video
+vid = "p7v1" #TODO: Modify for diff video
 
 
 def VidSessionCheck(video):
