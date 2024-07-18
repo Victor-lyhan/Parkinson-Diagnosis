@@ -3,25 +3,35 @@ p1v1 - 3258*
 p1v2 - 3676
 p2v1 - 3689
 p3v1 - 2364*
-p3v2 - 3636
+p3v2 - 3636~
 p3v3 - 181*
 p4v1 - 57*
 p5v1 - 803*
 p5v2 - 3611*
 p6v1 - 3616
-p6v2 - 3597
+p6v2 - 3597~
 p7v1 - 3601
 p7v2 - 3651
 p7v3 - 3609
 p8v1 - 3610
-p9v1 - 3361
+p9v1 - 3361~
 p9v2 - 3451
-p10v1 - 3628
+p10v1 - 3628~
 p10v2 - 2046*
-p10v3 - 3635
+p10v3 - 3635~
 
 * :
 Traceback (most recent call last):
   File "/Users/hanliyang/Documents/GitHub/Parkinson-Prediagnosis/Computer Vision/Video-Sensor-Anaysis.py", line 88, in <module>
     right_ankle = result_keypoint[index][get_keypoint.RIGHT_ANKLE]
 IndexError: index 16 is out of bounds for axis 0 with size 0
+
+~ :
+Traceback (most recent call last):
+  File "/Users/hanliyang/Documents/GitHub/Parkinson-Prediagnosis/Computer Vision/Utils/FoG_Extraction_toDF.py", line 26, in <module>
+    FoG_period = FoGperiodCheck(P,S)
+  File "/Users/hanliyang/Documents/GitHub/Parkinson-Prediagnosis/Computer Vision/Utils/FoG_Extraction_toDF.py", line 21, in FoGperiodCheck
+    a,b = map(float, pair.split('-'))
+ValueError: could not convert string to float: ''
+
+Meaning 0 FoG episodes
