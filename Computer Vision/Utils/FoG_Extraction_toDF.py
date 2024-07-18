@@ -3,7 +3,7 @@ import numpy as np
 import re
 import os
 
-vid = "p9v2" #TODO: Modify for diff video
+vid = "p10v3" #TODO: Modify for diff video
 
 
 def VidSessionCheck(video):
