@@ -121,9 +121,9 @@ while cap.isOpened():
         angular_velocity = (angle_deg - prev_angle) / time_diff
         print('Angular Velocity:', angular_velocity, 'deg/s')
 
-    # Calculate linear acceleration (assuming g = 9.81 m/s^2 for conversion to g)
+    # Calculate angular acceleration
     if prev_angular_velocity is not None:
-        linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff * 9.81
+        linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff
         print("Linear Acceleration (ML):", linear_acceleration,)
 
     # Update previous angle, angular velocity, linear acceleration, and time
