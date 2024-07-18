@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 import re
+import os
 
-vid = "p7v3" #TODO: Modify for diff video
+vid = "p9v2" #TODO: Modify for diff video
 
 
 def VidSessionCheck(video):
@@ -47,8 +48,9 @@ for period in range(0,len(FoG_period)):
 
 df_nonFoG = pd.concat([df_nonFoG, df[~df.isin(df_FoG.to_dict(orient='list')).all(axis=1)].dropna()], ignore_index=True)
 
-df_FoG.to_csv(f'Computer Vision/Results/df_{vid}_FoG.csv', index=False)
-df_nonFoG.to_csv(f'Computer Vision/Results/df_{vid}_nonFoG.csv', index=False)
+os.mkdir(f'Computer vision/Results/{vid}')
+df_FoG.to_csv(f'Computer Vision/Results/{vid}/df_{vid}_FoG.csv', index=False)
+df_nonFoG.to_csv(f'Computer Vision/Results/{vid}/df_{vid}_nonFoG.csv', index=False)
 
 print(f"Patient:{P}, session:{S}")
 print(f"'{FoG_period}'")
