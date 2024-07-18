@@ -16,3 +16,4 @@ Done:
 # Note
 * error "can't convert string to float" -> all nonFoG Data in the video
 * pyTorch ...DL, NLP, CNN
+* clarrification "transcript" part of the project
