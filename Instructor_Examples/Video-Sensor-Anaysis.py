@@ -13,8 +13,10 @@ def resize_image(image, scale_factor):
     new_height = int(image.shape[0] * scale_factor)
     return cv2.resize(image, (new_width, new_height))
 
-scale_factor = 0.5  # Adjust the scale factor as needed
+# Adjust the scale factor as needed
+scale_factor = 0.5  
 
+# Data model defining the indices detected by YOLO model
 class GetKeypoint(BaseModel):
     NOSE:           int = 0
     LEFT_EYE:       int = 1
@@ -60,7 +62,7 @@ for video_file in os.listdir(videos_folder):
         # Open video capture
         cap = cv2.VideoCapture(video_path)
 
-        # Previous frame angles, angular velocities, and linear accelerations
+        # Initialize previous frame angles, angular velocities, and linear accelerations
         prev_angle = None
         prev_angular_velocity = None
         prev_linear_acceleration = None
@@ -68,6 +70,7 @@ for video_file in os.listdir(videos_folder):
         angular_velocity = None
         prev_time = 0
 
+        # Process video frames
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
@@ -85,9 +88,11 @@ for video_file in os.listdir(videos_folder):
             if results[0].keypoints is None:
                 print("No keypoints detected in this frame. Skipping...")
                 continue
-
+            
+            # Get the kepyoints  as a Numpy array
             result_keypoint = results[0].keypoints.xyn.cpu().numpy()
 
+            # Identify the correct person based on the right ankle
             if len(result_keypoint) > 1 and result_keypoint[0][get_keypoint.RIGHT_ANKLE][0] > result_keypoint[1][get_keypoint.RIGHT_ANKLE][0]:
                 index = 1
 
