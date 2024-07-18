@@ -51,7 +51,7 @@ csv_file = 'Instructor_Examples/Results/results.csv'
 if not os.path.exists(csv_file):
     with open(csv_file, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['currenttime', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
+        writer.writerow(['currenttime', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'angular_acceleration'])
 
 # Process each video file in the folder
 for video_file in os.listdir(videos_folder):
@@ -130,10 +130,10 @@ for video_file in os.listdir(videos_folder):
                 angular_velocity = (angle_deg - prev_angle) / time_diff
                 print('Angular Velocity:', angular_velocity, 'deg/s')
 
-            # Calculate linear acceleration (assuming g = 9.81 m/s^2 for conversion to g)
+            # Calculate angular acceleration
             if prev_angular_velocity is not None:
-                linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff * 9.81
-                print("Linear Acceleration (ML):", linear_acceleration)
+                linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff
+                print("Angular Acceleration (ML):", linear_acceleration)
 
             # Update previous angle, angular velocity, linear acceleration, and time
             prev_angle = angle_deg
@@ -148,10 +148,6 @@ for video_file in os.listdir(videos_folder):
 
             # Display the image with keypoints
             cv2.imshow('YOLOv8 Keypoints', results[0].plot())
-
-            # Break the loop if 'q' is pressed
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
 
         # Release video capture and close windows
         cap.release()
