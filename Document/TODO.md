@@ -4,8 +4,6 @@ TODO:
 1. Compare Data in FoG with data that's not
     1. Need more data
 
-2. Live Assessment
-
 Done:
 * ~~Figure out the timestamp - frame - seconds conversion~~
 * ~~Extract out the fog vs non fog data~~
@@ -19,3 +17,4 @@ Done:
 * error "can't convert string to float" -> all nonFoG Data in the video
 * pyTorch ...DL, NLP, CNN
 * clarrification "transcript" part of the project
+* Live Assessment, Hand tremor detection
