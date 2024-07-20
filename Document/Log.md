@@ -46,6 +46,10 @@ Note:
         - Parkinson's patients may have difficulty starting or stopping movements (bradykinesia).
     * __different models?Training?__
 
+TODO: 
+1. Use the standard deviation to determine parkinsons or not (create a threshold)
+    1. you want to find the average of all the patients(need to make sure that all the patients parkinsonns), compare that to data of patient withuot parkinsons, With that information, you can apply different ml models
+
 
 ## July 19th 2024
 ### Computer Vision  
