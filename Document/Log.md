@@ -10,3 +10,14 @@
         - Can't tell any obvious difference using basic graphing 
         - found some algorithms that look for differences in dataframe
             - tested two, finish the rest tomorrow 
+* ideas for more data that can extracted from the video:
+    - Turning Duration
+    - Turning smoothness
+        - angular velovity and acceleration
+    - Number and length of Steps per Turn
+        - Parkinson's patients often take smaller, shuffling steps, resulting in a higher step count for the same turn
+        - Reduced step length and stride length are common in Parkinson's patients.
+    - Postural Stability and Sway:
+        - Assess the stability and balance during the turn.
+    - Initiation and Termination of Turns:
+        - Parkinson's patients may have difficulty starting or stopping movements (bradykinesia).
