@@ -7,3 +7,6 @@
     * Two video data compared with each other to validate discrepency 
         - Two graphs basically overlaped, meaning that the characteristics of data are consistent
     * Normal data compared with patient data trying to identify the possible marker
+        - Can't tell any obvious difference using basic graphing 
+        - found some algorithms that look for differences in dataframe
+            - tested two, finish the rest tomorrow 
