@@ -27,6 +27,25 @@
 ```
 * Comparing std, min and max might be able to tell parkinson's
 
+Note:
+* live Assessment - doable
+* CV methods: research needed
+    * Hand tremor detection - datasets, reach out to hospitals(standards)
+    * Turning in place
+    * Walking 
+* ideas for more data that can extracted from the video __(Research needed)__:
+    - Turning Duration - difficult to set the standard
+    - Turning smoothness
+        - angular velovity and acceleration
+    - Number and __length__ of Steps per Turn
+        - Parkinson's patients often take smaller, shuffling steps, resulting in a higher step count for the same turn
+        - Reduced step length and stride length are common in Parkinson's patients.
+    - Postural Stability and Sway:
+        - Assess the stability and balance during the turn.
+    - __Initiation and Termination of Turns__:
+        - Parkinson's patients may have difficulty starting or stopping movements (bradykinesia).
+    * __different models?Training?__
+
 
 ## July 19th 2024
 ### Computer Vision  
