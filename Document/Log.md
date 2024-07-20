@@ -1,5 +1,8 @@
 # Software Log
 **This file is used for documenting and development of the system.**
+## July 20th 2024
+### Computer Vision
+* Normal Data vs patient data graphing
 
 ## July 19th 2024
 ### Computer Vision  
@@ -21,3 +24,4 @@
         - Assess the stability and balance during the turn.
     - Initiation and Termination of Turns:
         - Parkinson's patients may have difficulty starting or stopping movements (bradykinesia).
+    * __different models?Training?__
