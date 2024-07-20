@@ -3,6 +3,28 @@
 ## July 20th 2024
 ### Computer Vision
 * Normal Data vs patient data graphing
+    Patient Data Statistics:
+    count    3255.000000
+    mean        0.033415
+    std        97.032716
+    min     -1794.957389
+    25%       -33.511011
+    50%         0.627522
+    75%        31.732623
+    max      1320.504493
+    Name: linear_acceleration, dtype: float64
+    Normal Data Statistics:
+    count    7311.000000
+    mean        0.057500
+    std        71.020173
+    min      -729.699033
+    25%       -27.280563
+    50%         0.496289
+    75%        28.309368
+    max       677.486215
+    Name: linear_acceleration, dtype: float64
+    Comparing std, min and max might be able to tell parkinson's
+
 
 ## July 19th 2024
 ### Computer Vision  
