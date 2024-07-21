@@ -1,5 +1,10 @@
 # Software Log
 **This file is used for documenting and development of the system.**
+
+## July 21st 2024
+### Computer Vision
+Video Sensor Analysis: Data acquested from all videos - in All folder
+
 ## July 20th 2024
 ### Computer Vision
 * Normal Data vs patient data graphing
@@ -52,7 +57,7 @@ TODO:
 2. Finding hand/finger tremor dataset
 
 Video Sensor Analysis:
-* Some df has large values that are impactical
+* Some df has large values that are impractical
 * Need to relate the statistical data with the updrs score, forming the scale standard
 
 
