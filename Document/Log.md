@@ -53,6 +53,7 @@ TODO:
 
 Video Sensor Analysis:
 * Some df has large values that are impactical
+* Need to relate the statistical data with the updrs score, forming the scale standard
 
 
 ## July 19th 2024
