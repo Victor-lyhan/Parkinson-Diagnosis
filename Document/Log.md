@@ -51,6 +51,9 @@ TODO:
     1. you want to find the average of all the patients(need to make sure that all the patients parkinsonns), compare that to data of patient withuot parkinsons, With that information, you can apply different ml models
 2. Finding hand/finger tremor dataset
 
+Video Sensor Analysis:
+* Some df has large values that are impactical
+
 
 ## July 19th 2024
 ### Computer Vision  

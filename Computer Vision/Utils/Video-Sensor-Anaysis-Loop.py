@@ -40,110 +40,121 @@ class GetKeypoint(BaseModel):
 
 get_keypoint = GetKeypoint()
 
-source_path = 'Data/Videos/PDFE03_2.mp4'  # or 0 for webcam TODO: change for new vid
+videos = ['PDFE10_1','PDFE10_2','PDFE10_3','PDFE11_1','PDFE11_2','PDFE12_1','PDFE13_1','PDFE14_1',
+          'PDFE14_2','PDFE14_3','PDFE15_1','PDFE16_1','PDFE16_2','PDFE17_1','PDFE18_1','PDFE18_2','PDFE18_3','PDFE19_1',
+          'PDFE19_2','PDFE20_1','PDFE20_2','PDFE20_3','PDFE21_1','PDFE21_2','PDFE21_3','PDFE22_1','PDFE23_1','PDFE23_2',
+          'PDFE24_1','PDFE25_1','PDFE25_2','PDFE25_3','PDFE26_1','PDFE26_2','PDFE26_3','PDFE27_1','PDFE27_2','PDFE27_3',
+          'PDFE28_1','PDFE28_2','PDFE28_3','PDFE29_1','PDFE30_1','PDFE30_2','PDFE30_3','PDFE31_1','PDFE31_2','PDFE31_3',
+          'PDFE32_1','PDFE32_2','PDFE32_3','PDFE33_1','PDFE34_1','PDFE35_1','PDFE35_2','PDFE35_3',]
 
-# Open video capture
-cap = cv2.VideoCapture(source_path)
-model = YOLO('yolov8n-pose.pt')
+for video in videos:
+    source_path = f'Data/Videos/{video}.mp4'  # or 0 for webcam TODO: change for new vid
 
-# Initialize CSV file
-csv_file = 'Computer Vision/Results/All/p3v2_results.csv' #TODO: change for new vid
-with open(csv_file, mode='w', newline='') as file:
-    writer = csv.writer(file)
-    # Write the headers
-    writer.writerow(['timestamp', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
+    parts = video.split('_')
+    p = parts[0][4:]
+    v = parts[1]
 
-# Previous frame angles, angular velocities, and linear accelerations
-prev_angle = None
-prev_angular_velocity = None
-prev_linear_acceleration = None
-linear_acceleration = None
-angular_velocity = None
-# Previous time
-prev_time = 0
-
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
-        break
-
-    # Resize the image
-    frame = resize_image(frame, scale_factor)
-    frame_time = cap.get(cv2.CAP_PROP_POS_MSEC) / 1000
-
-    # Run YOLOv8 inference on the frame
-    results = model(frame, conf=0.7)
-    index = 0
-
-    # Check if keypoints are detected -- issues with not identifying keypoints
-    if results[0].keypoints is None:
-        print("No Kepypoints detected in this frame. Skipping...")
-        continue
-    result_keypoint = results[0].keypoints.xyn.cpu().numpy()
-
-    if len(result_keypoint) > 1 and result_keypoint[0][get_keypoint.RIGHT_ANKLE][0] > result_keypoint[1][get_keypoint.RIGHT_ANKLE][0]:
-        index = 1
-    print('index:', index)
-    # Extract landmarks for the foot (assuming only one person in the frame)
-    right_ankle = result_keypoint[index][get_keypoint.RIGHT_ANKLE]
-    right_knee = result_keypoint[index][get_keypoint.RIGHT_KNEE]
-    right_hip = result_keypoint[index][get_keypoint.RIGHT_HIP]
-
-    # Calculate the vectors
-    vector1 = (right_knee[0] - right_ankle[0], right_knee[1] - right_ankle[1])
-    vector2 = (right_hip[0] - right_ankle[0], right_hip[1] - right_ankle[1])
-
-    # Calculate the angle between the vectors
-    dot_product = vector1[0] * vector2[0] + vector1[1] * vector2[1]
-    magnitude1 = math.sqrt(vector1[0]**2 + vector1[1]**2)
-    magnitude2 = math.sqrt(vector2[0]**2 + vector2[1]**2)
-
-    # Checking magnitude dot product -- having issues with script stopping
-    print(f"dot_product: {dot_product}, magnitude1: {magnitude1}, magnitude2: {magnitude2}")
-
-    if magnitude1 == 0 or magnitude2 == 0:
-        print("One of the magnitudes is zero, skipping frame")
-        continue
-
-    cos_angle = dot_product / (magnitude1 * magnitude2)
-    cos_angle = max(-1.0, min(1.0, cos_angle))
-    angle_rad = math.acos(cos_angle)
-
-    # Convert the angle to degrees
-    angle_deg = math.degrees(angle_rad)
-
-    # Calculate time difference
-    current_time = time.time()
-    time_diff = current_time - prev_time
-    print(time_diff)
-    # Calculate angular velocity
-    if prev_angle is not None:
-        angular_velocity = (angle_deg - prev_angle) / time_diff
-        print('Angular Velocity:', angular_velocity, 'deg/s')
-
-    # Calculate angular acceleration
-    if prev_angular_velocity is not None:
-        linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff
-        print("Linear Acceleration (ML):", linear_acceleration,)
-
-    # Update previous angle, angular velocity, linear acceleration, and time
-    prev_angle = angle_deg
-    prev_angular_velocity = angular_velocity
-    prev_linear_acceleration = linear_acceleration
-    prev_time = current_time
-
-    # Write results to CSV
-    with open(csv_file, mode='a', newline='') as file:
+    # Open video capture
+    cap = cv2.VideoCapture(source_path)
+    model = YOLO('yolov8n-pose.pt')
+    # Initialize CSV file
+    csv_file = f'Computer Vision/Results/All/p{p}v{v}_results.csv' #TODO: change for new vid
+    with open(csv_file, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([current_time, frame_time, index, right_ankle[0], right_ankle[1], right_knee[0], right_knee[1], right_hip[0], right_hip[1], magnitude1, magnitude2, angle_deg, angular_velocity, linear_acceleration])
+        # Write the headers
+        writer.writerow(['timestamp', 'frame_time', 'index', 'right_ankle_x', 'right_ankle_y', 'right_knee_x', 'right_knee_y', 'right_hip_x', 'right_hip_y', 'magnitude1', 'magnitude2', 'angle_deg', 'angular_velocity', 'linear_acceleration'])
 
-    # Display the image with keypoints
-    cv2.imshow('YOLOv8 Keypoints', results[0].plot())
+    # Previous frame angles, angular velocities, and linear accelerations
+    prev_angle = None
+    prev_angular_velocity = None
+    prev_linear_acceleration = None
+    linear_acceleration = None
+    angular_velocity = None
+    # Previous time
+    prev_time = 0
 
-    # Break the loop if 'q' is pressed
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-# Release video capture and close windows
-cap.release()
-cv2.destroyAllWindows()
+        # Resize the image
+        frame = resize_image(frame, scale_factor)
+        frame_time = cap.get(cv2.CAP_PROP_POS_MSEC) / 1000
+
+        # Run YOLOv8 inference on the frame
+        results = model(frame, conf=0.7)
+        index = 0
+
+        # Check if keypoints are detected -- issues with not identifying keypoints
+        if results[0].keypoints is None:
+            print("No Kepypoints detected in this frame. Skipping...")
+            continue
+        result_keypoint = results[0].keypoints.xyn.cpu().numpy()
+
+        if len(result_keypoint) > 1 and result_keypoint[0][get_keypoint.RIGHT_ANKLE][0] > result_keypoint[1][get_keypoint.RIGHT_ANKLE][0]:
+            index = 1
+        print('index:', index)
+        # Extract landmarks for the foot (assuming only one person in the frame)
+        right_ankle = result_keypoint[index][get_keypoint.RIGHT_ANKLE]
+        right_knee = result_keypoint[index][get_keypoint.RIGHT_KNEE]
+        right_hip = result_keypoint[index][get_keypoint.RIGHT_HIP]
+
+        # Calculate the vectors
+        vector1 = (right_knee[0] - right_ankle[0], right_knee[1] - right_ankle[1])
+        vector2 = (right_hip[0] - right_ankle[0], right_hip[1] - right_ankle[1])
+
+        # Calculate the angle between the vectors
+        dot_product = vector1[0] * vector2[0] + vector1[1] * vector2[1]
+        magnitude1 = math.sqrt(vector1[0]**2 + vector1[1]**2)
+        magnitude2 = math.sqrt(vector2[0]**2 + vector2[1]**2)
+
+        # Checking magnitude dot product -- having issues with script stopping
+        print(f"dot_product: {dot_product}, magnitude1: {magnitude1}, magnitude2: {magnitude2}")
+
+        if magnitude1 == 0 or magnitude2 == 0:
+            print("One of the magnitudes is zero, skipping frame")
+            continue
+
+        cos_angle = dot_product / (magnitude1 * magnitude2)
+        cos_angle = max(-1.0, min(1.0, cos_angle))
+        angle_rad = math.acos(cos_angle)
+
+        # Convert the angle to degrees
+        angle_deg = math.degrees(angle_rad)
+
+        # Calculate time difference
+        current_time = time.time()
+        time_diff = current_time - prev_time
+        print(time_diff)
+        # Calculate angular velocity
+        if prev_angle is not None:
+            angular_velocity = (angle_deg - prev_angle) / time_diff
+            print('Angular Velocity:', angular_velocity, 'deg/s')
+
+        # Calculate angular acceleration
+        if prev_angular_velocity is not None:
+            linear_acceleration = (angular_velocity - prev_angular_velocity) / time_diff
+            print("Linear Acceleration (ML):", linear_acceleration,)
+
+        # Update previous angle, angular velocity, linear acceleration, and time
+        prev_angle = angle_deg
+        prev_angular_velocity = angular_velocity
+        prev_linear_acceleration = linear_acceleration
+        prev_time = current_time
+
+        # Write results to CSV
+        with open(csv_file, mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([current_time, frame_time, index, right_ankle[0], right_ankle[1], right_knee[0], right_knee[1], right_hip[0], right_hip[1], magnitude1, magnitude2, angle_deg, angular_velocity, linear_acceleration])
+
+        # Display the image with keypoints
+        cv2.imshow('YOLOv8 Keypoints', results[0].plot())
+
+        # Break the loop if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # Release video capture and close windows
+    cap.release()
+    cv2.destroyAllWindows()
