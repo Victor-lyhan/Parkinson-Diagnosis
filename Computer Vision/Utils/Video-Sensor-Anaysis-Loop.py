@@ -40,7 +40,7 @@ class GetKeypoint(BaseModel):
 
 get_keypoint = GetKeypoint()
 
-videos = ['PDFE30_2','PDFE30_3','PDFE31_1','PDFE31_2','PDFE31_3',
+videos = ['PDFE30_3','PDFE31_1','PDFE31_2','PDFE31_3',
           'PDFE32_1','PDFE32_2','PDFE32_3','PDFE33_1','PDFE34_1','PDFE35_1','PDFE35_2','PDFE35_3',]
 
 for video in videos:
