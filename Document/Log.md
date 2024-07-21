@@ -3,7 +3,10 @@
 
 ## July 21st 2024
 ### Computer Vision
-Video Sensor Analysis: Data acquested from all videos - in All folder
+* Video Sensor Analysis: Data acquested from all videos - in All folder
+* Got the avg - min, max, avg, stdv for patient and non patient
+    * noticed some reall big values - how to get rid of those without bias(intentionally selecting the acceptable range)
+
 
 ## July 20th 2024
 ### Computer Vision
