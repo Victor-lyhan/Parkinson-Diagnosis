@@ -1,6 +1,10 @@
 # Software Log
 **This file is used for documenting and development of the system.**
-
+## July 22nd 2024
+### Computer Vision
+* Code for getting merging the fog ratio and updrs-3 score into stats - df
+    * Can be used to compare fog Ratio to stats
+    
 ## July 21st 2024
 ### Computer Vision
 * Video Sensor Analysis: Data acquested from all videos - in All folder
