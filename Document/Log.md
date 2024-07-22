@@ -13,7 +13,7 @@
 
     ```
 * Got the avg - min, max, avg, stdv for patient and non patient
-    * noticed some reall big values - how to get rid of those without bias(intentionally selecting the acceptable range)
+    * noticed some reall big values -> getting rid of those without bias(intentionally selecting the acceptable range)
 * correlation between stats for each video and the FoG Ratio and UPDRS-III
 
 
