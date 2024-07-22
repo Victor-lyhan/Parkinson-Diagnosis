@@ -15,7 +15,7 @@
 * Got the avg - min, max, avg, stdv for patient and non patient
     * noticed some reall big values -> getting rid of those without bias(intentionally selecting the acceptable range)
 * correlation between stats for each video and the FoG Ratio and UPDRS-III
-
+    * code for creating df with angular acceleration, fog ration, updrs - 3 used for comparison ml
 
 ## July 20th 2024
 ### Computer Vision
