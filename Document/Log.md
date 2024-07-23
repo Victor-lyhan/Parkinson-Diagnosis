@@ -1,5 +1,14 @@
 # Software Log
 **This file is used for documenting and development of the system.**
+## July 23rd 2024
+### Computer Vision
+* Problem 1
+    * Outliers - getting rid of or no - matters or no
+        * correlation between ang acc - fog ratio - doesn;t correlate
+* Problem 2
+    * Weighted avg        
+
+
 ## July 22nd 2024
 ### Computer Vision
 * Code for getting merging the fog ratio and updrs-3 score into stats - df
