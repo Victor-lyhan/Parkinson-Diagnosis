@@ -15,7 +15,7 @@ import os
 
 characToCheck = ['linear_acceleration'] #Angular Acceleration 
 
-df = pd.read_csv('Computer Vision/Results/all_stats.csv') # All stats from all videos
+df = pd.read_csv('Computer Vision/Results/stats/all_stats_noOutliers_1000.csv') # All stats from all videos
 info = pd.read_csv('Data/PDFEinfo.csv', encoding='latin-1', sep=';')
 df_charac = df[df['statistic'].isin(characToCheck)].copy()
 
@@ -40,4 +40,4 @@ for video in range(len(df_charac)):
     df_charac.iloc[video,-2] = FoGRatio
     df_charac.iloc[video,-1] = UPDRS_3
 
-df_charac.to_csv(f'Computer Vision/Results/all_stats_{characToCheck}_fogRatio_updrsIII.csv', index=False)
+df_charac.to_csv(f'Computer Vision/Results/stats-chosen/all_stats_noOutliers_{characToCheck[0]}_fogRatio_updrsIII.csv', index=False)
