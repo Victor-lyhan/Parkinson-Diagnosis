@@ -5,6 +5,9 @@
 * Problem 1
     * Outliers - getting rid of or no - matters or no
         * correlation between ang acc - fog ratio - doesn;t correlate
+            * Results: Using heatmap, no significant difference between three values shown before and after large values were deleted - no linear model
+            * Bigger dataset needed, higher dimensions
+        * 
 * Problem 2
     * Weighted avg        
 
