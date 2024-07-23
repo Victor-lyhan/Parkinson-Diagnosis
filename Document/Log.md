@@ -9,7 +9,19 @@
             * Bigger dataset needed, higher dimensions
         * 
 * Problem 2
-    * Weighted avg        
+    * Weighted avg 
+
+### PDFEinfo.csv
+* Parameters reflecting motor performace      
+```
+Session 1 - UPDRS-II (score): This assesses motor experiences of daily living.
+Session 1 - UPDRS-III (score): This evaluates motor examination.
+Session 1 - PIGD (score): Postural Instability and Gait Difficulty score.
+Session 1 - Dyskinesia (score): Evaluates involuntary movements.
+Session 1 - MiniBestTest (score): Assesses balance.
+Session 1 - TUG time (s): Timed Up and Go test for mobility.
+Session 1 - TUG dual-task time (s): Timed Up and Go test with a dual task for mobility and multitasking ability.
+``` 
 
 
 ## July 22nd 2024
