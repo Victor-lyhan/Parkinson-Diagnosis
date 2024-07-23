@@ -4,6 +4,10 @@
 ### Computer Vision
 * Code for getting merging the fog ratio and updrs-3 score into stats - df
     * Can be used to compare fog Ratio to stats
+* Logic:
+    * We have angular acceleration data for all videos
+    * Instead of taking the avg of all angular accel ->  Figure out the correlation between fog ratio and the angular accel
+    * higher angular accel -> higher stdv, vice versa  
     
 ## July 21st 2024
 ### Computer Vision
