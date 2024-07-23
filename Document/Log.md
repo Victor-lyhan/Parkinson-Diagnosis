@@ -8,6 +8,9 @@
     * We have angular acceleration data for all videos
     * Instead of taking the avg of all angular accel ->  Figure out the correlation between fog ratio and the angular accel
     * higher angular accel -> higher stdv, vice versa  
+* graphed angualr accel vs fog ratio
+    * seems to be no correlation for now: one of the possible reasons include having irregularl huge values in df that messes up the stats
+    * meaning that figuring out a strategy to get rid of em is necessary
     
 ## July 21st 2024
 ### Computer Vision
