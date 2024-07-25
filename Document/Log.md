@@ -1,5 +1,14 @@
 # Software Log
 **This file is used for documenting and development of the system.**
+## July 25th 2025
+### Computer Vision
+* Continue on using ml algorithms to determine correlations between std with all other parameters
+    * Used CNN 
+* All progress commented in the graph.ipynb
+* Whole process works:
+    * Next step: tuning the parameters
+    * Making the complete loop/code
+    
 ## July 23rd 2024
 ### Computer Vision
 * Problem 1
