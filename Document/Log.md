@@ -6,6 +6,22 @@
 * Tried predicting differnt parameter
     * Which one has the best accuracy
 
+* p1v1 
+    * Given std input: 83.57921565783211 
+    * Prediction: 
+
+| Parameter | Predicted | Original | MSE |
+|---|---|---|---|
+| FoG Ratio | 22.428913 | 95.9 | 1322 |
+| UPDRS-II | 6.8395505 | 6 | 7.247766800645755 |
+| UPDRS-III | 25.10884 | 16 | 142.3441821694842 |
+| PIGD | 5.191346 | 6 | 9.992495622697167 |
+| Dyskinesia* | 0.7922452 | 0 | 8.662053932808194 | 
+| MiniBestTest Score | 21.518253 | 17 | 26.389296815497314 |
+| TUG time | 12.618898 | 16.73 | 25.621056229161052 |
+| TUG dual-task time | 17.992321 | 28.43 | 221.43037963658153 |
+
+
 ## July 25th 2025
 ### Computer Vision
 * Continue on using ml algorithms to determine correlations between std with all other parameters
