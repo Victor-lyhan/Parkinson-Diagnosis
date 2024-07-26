@@ -1,4 +1,6 @@
 # Parkinsons Diagnosis Analysis
+## Progres
+![](https://geps.dev/progress/32?dangerColor=800000&warningColor=ff9900&successColor=006600)
 
 ## References
 [Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8904564/) to research paper
