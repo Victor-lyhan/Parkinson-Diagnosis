@@ -1,5 +1,11 @@
 # Software Log
 **This file is used for documenting and development of the system.**
+## July 26th 2025
+### Computer Vision
+* Tried training the model using 1 parameter vs multiple
+* Tried predicting differnt parameter
+    * Which one has the best accuracy
+
 ## July 25th 2025
 ### Computer Vision
 * Continue on using ml algorithms to determine correlations between std with all other parameters
