@@ -18,3 +18,7 @@ Done:
 * pyTorch ...DL, NLP, CNN
 * clarrification "transcript" part of the project
 * Live Assessment, Hand tremor detection
+
+# Commands
+* To add current venv packages onto requirements.txt ```pip freeze > requirements.txt``` make sure you are in the correct directory
+* To install all packages inside the requirements.txt file ```pip install -r requirementx.txt```
