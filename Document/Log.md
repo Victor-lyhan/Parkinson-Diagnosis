@@ -21,6 +21,10 @@
 | TUG time | 12.618898 | 16.73 | 25.621056229161052 |
 | TUG dual-task time | 17.992321 | 28.43 | 221.43037963658153 |
 
+* Decided to use NN as it has the lowest error meaning the highest accuracy
+    * 5 layers
+    * still need to tune the model
+
 
 ## July 25th 2025
 ### Computer Vision
