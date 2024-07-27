@@ -1,6 +1,13 @@
 # Software Log
 **This file is used for documenting and development of the system.**
-## July 26th 2025
+## July 27th 2024
+### Computer Vision
+* Code organized
+* Models in folder
+* still need to tune the model
+    * checking the accuracy over all files
+
+## July 26th 2024
 ### Computer Vision
 * Tried training the model using 1 parameter vs multiple
 * Tried predicting differnt parameter
@@ -26,7 +33,7 @@
     * still need to tune the model
 
 
-## July 25th 2025
+## July 25th 2024
 ### Computer Vision
 * Continue on using ml algorithms to determine correlations between std with all other parameters
     * Used CNN 
