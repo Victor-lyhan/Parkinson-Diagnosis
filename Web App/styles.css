@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-sarif;
+    margin: 1;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+header {
+    background-color: aliceblue;
+    color: aqua;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0 1rem;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0;
+}
+
+nav ul li a {
+    color:rgb(238, 6, 6);
+    text-decoration: none;
+}
+
+section {
+    margin: 2rem;
+    padding: 4rem;
+    background-color: blue;
+    border-radius: 1rem;
+}
+
+#about {
+    background-color: aqua;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.sidebar {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 200px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+#current-section{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
