@@ -182,11 +182,9 @@ while cap.isOpened():
         break
 
 
-# Get  rid of outliers
+# Get rid of outliers
 
-
-
-
+df = [df <= 1000]
 
 ang_acc_std_df = df['angular_acceleration'].std()
 std_array = np.array([ang_acc_std_df])
