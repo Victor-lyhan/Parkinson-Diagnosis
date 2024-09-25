@@ -2,3 +2,4 @@ venv/
 data/
 .venv/
 .DS_Store
+Instruct/CV_Hand_Model/venv
