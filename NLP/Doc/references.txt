@@ -7,6 +7,10 @@ References;
 5. https://archive.ics.uci.edu/datasets?search=parkinson
 6. https://www.prd-journal.com/article/S1353-8020(23)00134-7/abstract
 7. https://www.nltk.org/howto.html
+8. https://www.medrxiv.org/content/10.1101/2024.04.10.24305599v1.full.pdf
+9. https://figshare.com/articles/dataset/Voice_Samples_for_Patients_with_Parkinson_s_Disease_and_Healthy_Controls/23849127
+10. https://zenodo.org/records/2867216
+11. https://github.com/SJTU-YONGFU-RESEARCH-GRP/Parkinson-Patient-Speech-Dataset
 
 Audio Conversion:
 https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/
