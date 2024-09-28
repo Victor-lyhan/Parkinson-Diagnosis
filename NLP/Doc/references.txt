@@ -1,18 +1,27 @@
 References;
 
+General: 
 1. https://healthcare-in-europe.com/en/news/parkinsons-nlp-detects-changes-speech-pattern.html
 2. https://neurosciencenews.com/speech-parkinsons-ai-23221/
-3. https://figshare.com/articles/dataset/Voice_Samples_for_Patients_with_Parkinson_s_Disease_and_Healthy_Controls/23849127?file=41836707
-4. https://data.mendeley.com/datasets/z39mhdsynx/3#:~:text=This%20is%20the%20keystroke%20dataset%20for%20the,subjects%2C%20with%20and%20without%20Parkinson's%20Disease%20(PD)%2C
-5. https://archive.ics.uci.edu/datasets?search=parkinson
-6. https://www.prd-journal.com/article/S1353-8020(23)00134-7/abstract
-7. https://www.nltk.org/howto.html
-8. https://www.medrxiv.org/content/10.1101/2024.04.10.24305599v1.full.pdf
-9. https://figshare.com/articles/dataset/Voice_Samples_for_Patients_with_Parkinson_s_Disease_and_Healthy_Controls/23849127
-10. https://zenodo.org/records/2867216
-11. https://github.com/SJTU-YONGFU-RESEARCH-GRP/Parkinson-Patient-Speech-Dataset
-12. https://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2014/Orozco14-NSS.pdf
-13. https://www.kaggle.com/datasets/ruslankl/early-biomarkers-of-parkinsons-disease/data
+3. https://www.prd-journal.com/article/S1353-8020(23)00134-7/abstract - Research paper
+4. https://www.medrxiv.org/content/10.1101/2024.04.10.24305599v1.full.pdf - Research paper
+5. https://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2014/Orozco14-NSS.pdf - Research paper
+
+NLTK - library:
+1. https://www.nltk.org/howto.html
+
+Dataset - UCI:
+1. https://archive.ics.uci.edu/datasets?search=parkinson
+
+Dataset - NLP:
+1. https://figshare.com/articles/dataset/Voice_Samples_for_Patients_with_Parkinson_s_Disease_and_Healthy_Controls/23849127
+2. https://zenodo.org/records/2867216
+3. https://github.com/SJTU-YONGFU-RESEARCH-GRP/Parkinson-Patient-Speech-Dataset
+4. https://www.kaggle.com/datasets/ruslankl/early-biomarkers-of-parkinsons-disease/data
+
+Dataset - Keystroke:
+1. https://data.mendeley.com/datasets/z39mhdsynx/3#:~:text=This%20is%20the%20keystroke%20dataset%20for%20the,subjects%2C%20with%20and%20without%20Parkinson's%20Disease%20(PD)%2C
+
 
 Audio Conversion:
 https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/
