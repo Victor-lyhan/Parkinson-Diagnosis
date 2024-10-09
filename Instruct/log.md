@@ -1,7 +1,10 @@
 # Log
 
 ## October 8, 2024
-* 
+* Did calculations of landmarks based on video data 
+* Now we need to
+    1. Gather video data of Parkinsons patient
+    2. Figure out how to automize everything WHILE taking a video
 
 ## July 13, 2024
 * Edited the code so that we can view the patietn videos using Ultralytics and Roboflow
