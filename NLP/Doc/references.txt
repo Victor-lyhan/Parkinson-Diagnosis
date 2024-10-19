@@ -27,3 +27,24 @@ Audio Conversion:
 https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/
 https://www.assemblyai.com/pricing
 https://www.geeksforgeeks.org/create-a-voice-recorder-using-python/
+
+
+For each HC and PD participant, we labeled the data regarding scores on the Hoehn & Yahr (H&Y), as well as the UPDRS II part 5 and UPDRS III part 18 scale. The voice recordings are labeled in the following scheme:
+
+SI_ HS_ HYR_ UPDRS II-5_UPDRS III-18
+
+with
+
+SI as subject identification in the form IDNN, N in [0, 9]
+HS as the health status label (hc or pd accordingly)
+HYR as the expert assessed H&Y scale rating
+UPDRS II-5 as the according expert peer-reviewed score
+UPDRS III-18 as the according expert assessed score
+
+For example, an audio recording with the file name “ID02_pd_1_2_1.wav” represents a recording of the third participant (First participant was anonymized as ID00), 
+which has PD and a H&Y rating of 1, a UPDRS II-5 score of 2 and a UPDRS III-18 score of 1. At this point, it should be noted, 
+that also all healthy controls were evaluated with regard to the introduced scales, because Parkinson's disease and voice degradation correlate, 
+but don't match exactly. This means, that the data set includes one HC participant (ID31) with UPDRS II-5 and III-18 rating of 1, 
+and also includes PD patients with UPDRS II-5 and III-18 ratings of 0. It should be emphasized, that this does not mean the data set includes ambiguous information, 
+but that an expert was not able to hear voice degradation that would end up in a UPDRS rating greater than zero. Machine learning approaches may be able to nevertheless classify correctly,
+ or at least learn to correlate, but not match PD and voice degradation at any time.
