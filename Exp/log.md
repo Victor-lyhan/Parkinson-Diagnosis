@@ -1,5 +1,11 @@
 # Log
 
+## Oct 22, 2024
+* We will calculate the acceleration
+* We need to create a baseline so that we can determine the variance of parkinons vs baseline and non-parkinsons vs baseline
+* We can create a script where it determines if the variance is higher at a certain point, then they probably have parkinosns/not
+
+
 ## October 8, 2024
 * Did calculations of landmarks based on video data 
 * Now we need to
