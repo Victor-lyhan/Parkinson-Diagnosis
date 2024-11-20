@@ -1,3 +1,10 @@
+## November 19, 2024
+* Started implementing the LSTM Model
+    * We needed to create labels for pos and neg patients
+
+Next class, we want to test the LSTM NN Model -> But that requires more data b/c there was an error with train test split
+saying that splitting the data will create an empty sequence (b/c there is not enough data)
+
 ### Novemeber 11, 2024
 * Create a way to determine parkinsons based on .csv data
     * In this case, we are using change in velocity
