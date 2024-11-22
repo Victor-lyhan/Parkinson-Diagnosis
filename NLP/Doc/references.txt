@@ -10,6 +10,9 @@ General:
 NLTK - library:
 1. https://www.nltk.org/howto.html
 
+ParselMouth - library:
+1. https://osf.io/6dwr3/
+
 Dataset - UCI:
 1. https://archive.ics.uci.edu/datasets?search=parkinson
 
