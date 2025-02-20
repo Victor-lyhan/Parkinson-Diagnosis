@@ -17,9 +17,9 @@ from ultralytics import YOLO
 from pathlib import Path
 
 # Load the models
-model = load_model('Computer Vision/models/cnn_version1.h5')
-model = load_model('Computer Vision/models/cnn_version1.h5')
-model = load_model('Computer Vision/models/cnn_version1.h5')
+model = load_model('Computer Vision/models/CV_NN_model_5l.h5')
+
+#feature extraction
 
 def resize_image(image, scale_factor):
     # Calculate the new dimensions
@@ -183,7 +183,6 @@ while cap.isOpened():
 
 
 # Get rid of outliers
-
 df = [df <= 1000]
 
 ang_acc_std_df = df['angular_acceleration'].std()
